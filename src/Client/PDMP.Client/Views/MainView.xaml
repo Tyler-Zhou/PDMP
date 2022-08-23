@@ -13,6 +13,7 @@
     Width="800"
     Height="450"
     Foreground="{DynamicResource DefaultForeground}"
+    Icon="/Resource/PDMP.ico"
     WindowStartupLocation="CenterScreen"
     mc:Ignorable="d">
     <ext:ApplicationWindow.Resources>
@@ -25,6 +26,7 @@
                 <ColumnDefinition Width="Auto" />
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
+            <!--  图标与标题  -->
             <StackPanel Orientation="Horizontal">
                 <Image
                     Width="22"
@@ -34,6 +36,7 @@
                     Source="{Binding Icon, RelativeSource={RelativeSource AncestorType={x:Type Window}}}" />
                 <TextBlock Text="{Binding Title, RelativeSource={RelativeSource AncestorType={x:Type Window}}}" />
             </StackPanel>
+            <!--  系统菜单栏  -->
             <Menu
                 Grid.Column="1"
                 HorizontalAlignment="Left"
@@ -56,6 +59,7 @@
                     </MenuItem.ItemContainerStyle>
                 </MenuItem>
             </Menu>
+            <!--  菜单设置栏  -->
             <Menu
                 Grid.Column="2"
                 HorizontalAlignment="Right"
@@ -119,6 +123,7 @@
             </Menu>
         </Grid>
     </ext:ApplicationWindow.TitleBarContent>
+    <!--  主容器  -->
     <ContentControl
         Grid.Row="0"
         Grid.Column="1"

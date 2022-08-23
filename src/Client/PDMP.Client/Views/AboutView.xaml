@@ -17,17 +17,23 @@
         </Grid.RowDefinitions>
         <Grid HorizontalAlignment="Center">
             <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
-            <StackPanel Grid.Column="0" Margin="20,0">
+            <Image
+                Grid.Column="0"
+                Width="50"
+                VerticalAlignment="Center"
+                Source="../Resource/PDMP.ico" />
+            <StackPanel Grid.Column="1" Margin="20,0">
                 <StackPanel Margin="0,0,0,5" Orientation="Horizontal">
-                    <TextBlock FontSize="20">pdOS</TextBlock>
+                    <TextBlock FontSize="20">PDMP</TextBlock>
                     <TextBlock Margin="10,0">作者:  周碧玉</TextBlock>
                 </StackPanel>
 
                 <TextBlock>
-                    项目地址:<Hyperlink Click="Hyperlink_Click" NavigateUri="https://github.com/Tyler-Zhou/pdOS">
-                        github.com/Tyler-Zhou/pdOS
+                    项目地址:<Hyperlink Click="Hyperlink_Click" NavigateUri="https://github.com/Tyler-Zhou/PDMP">
+                        github.com/Tyler-Zhou/PDMP
                     </Hyperlink>
                 </TextBlock>
             </StackPanel>
@@ -48,8 +54,8 @@
                     BorderThickness="1" />
             </StackPanel>
             <TextBlock Grid.Row="1" Margin="20,10,0,0">
-                Github :<Hyperlink Click="Hyperlink_Click" NavigateUri="https://github.com/Tyler-Zhou/pdOS/issues">
-                    https://github.com/Tyler-Zhou/pdOS/issues
+                Github :<Hyperlink Click="Hyperlink_Click" NavigateUri="https://github.com/Tyler-Zhou/PDMP/issues">
+                    https://github.com/Tyler-Zhou/PDMP/issues
                 </Hyperlink>
             </TextBlock>
             <TextBlock Grid.Row="2" Margin="20,10,0,0">

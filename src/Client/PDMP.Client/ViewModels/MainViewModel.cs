@@ -19,7 +19,7 @@ namespace PDMP.Client.ViewModels
     /// </summary>
     public class MainViewModel : BindableBase
     {
-        #region 成员(Member)
+        #region 成员(Members)
 
         #region 程序标题
         /// <summary>
@@ -158,6 +158,7 @@ namespace PDMP.Client.ViewModels
             MenuItems = new ObservableCollection<MenuItemModel>
             {
                 new MenuItemModel{IconName="", DisplayName = "首页", ViewName="IndexView"},
+                new MenuItemModel{IconName="", DisplayName = "题目", ViewName="TopicView"},
             };
             CurrentMenuItem = MenuItems[0];
 

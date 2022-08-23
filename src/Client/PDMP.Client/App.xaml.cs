@@ -5,6 +5,7 @@ using PDMP.Client.ViewModels;
 using PDMP.Client.Views;
 using Prism.DryIoc;
 using Prism.Ioc;
+using Prism.Modularity;
 using System;
 using System.Threading;
 using System.Threading.Tasks;
@@ -91,15 +92,15 @@ namespace PDMP.Client
         {
             base.OnInitialized();
         }
-        ///// <summary>
-        ///// 加载模块
-        ///// </summary>
-        ///// <returns></returns>
-        //protected override IModuleCatalog CreateModuleCatalog()
-        //{
-        //    //指定模块加载方式为从文件夹中以反射发现并加载module(推荐用法)
-        //    return new DirectoryModuleCatalog() { ModulePath = @".\Modules" };
-        //}
+        /// <summary>
+        /// 加载模块
+        /// </summary>
+        /// <returns></returns>
+        protected override IModuleCatalog CreateModuleCatalog()
+        {
+            //指定模块加载方式为从文件夹中以反射发现并加载module(推荐用法)
+            return new DirectoryModuleCatalog() { ModulePath = @".\Modules" };
+        }
         /// <summary>
         /// 注册 (视图、视图模型、服务)
         /// </summary>

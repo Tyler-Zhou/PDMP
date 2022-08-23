@@ -13,6 +13,12 @@ namespace PDMP.Client.Core
     /// </summary>
     public static class DependencyObjectExtensions
     {
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="node"></param>
+        /// <returns></returns>
+        /// <exception cref="ArgumentNullException"></exception>
         public static IEnumerable<DependencyObject> VisualDepthFirstTraversal(this DependencyObject node)
         {
             if (node is null) throw new ArgumentNullException(nameof(node));
@@ -28,7 +34,12 @@ namespace PDMP.Client.Core
                 }
             }
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="node"></param>
+        /// <returns></returns>
+        /// <exception cref="ArgumentNullException"></exception>
         public static IEnumerable<DependencyObject> VisualBreadthFirstTraversal(this DependencyObject node)
         {
             if (node is null) throw new ArgumentNullException(nameof(node));
@@ -49,7 +60,12 @@ namespace PDMP.Client.Core
                 }
             }
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="parent"></param>
+        /// <param name="node"></param>
+        /// <returns></returns>
         public static bool IsAncestorOf(this DependencyObject parent, DependencyObject node)
             => node != null && parent.VisualDepthFirstTraversal().Contains(node);
 
@@ -70,7 +86,11 @@ namespace PDMP.Client.Core
                     : LogicalTreeHelper.GetParent(leaf);
             }
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="leaf"></param>
+        /// <returns></returns>
         public static IEnumerable<DependencyObject> GetLogicalAncestry(this DependencyObject leaf)
         {
             while (leaf != null)
@@ -79,7 +99,12 @@ namespace PDMP.Client.Core
                 leaf = LogicalTreeHelper.GetParent(leaf);
             }
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="leaf"></param>
+        /// <param name="ancestor"></param>
+        /// <returns></returns>
         public static bool IsDescendantOf(this DependencyObject leaf, DependencyObject ancestor)
         {
             DependencyObject parent = null;
