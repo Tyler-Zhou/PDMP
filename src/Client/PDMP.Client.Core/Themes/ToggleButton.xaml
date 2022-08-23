@@ -1,0 +1,355 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:PDMP.Client.Core">
+
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="pack://application:,,,/PDMP.Client.Core;component/Themes/Resources/Default.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+
+    <Style x:Key="FocusVisual">
+        <Setter Property="Control.Template">
+            <Setter.Value>
+                <ControlTemplate>
+                    <Rectangle
+                        Margin="2"
+                        SnapsToDevicePixels="true"
+                        Stroke="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"
+                        StrokeDashArray="1 2"
+                        StrokeThickness="1" />
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="ExtToggleButton" TargetType="{x:Type ToggleButton}">
+        <Setter Property="Background" Value="{DynamicResource BorderLighter}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource Border}" />
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="Cursor" Value="Hand" />
+        <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}" />
+        <Setter Property="Foreground" Value="{DynamicResource BlackForeground}" />
+        <Setter Property="Height" Value="28" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="Padding" Value="5,0" />
+        <Setter Property="SnapsToDevicePixels" Value="True" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="local:ButtonExtensions.CircleDiameter" Value="28" />
+        <Setter Property="local:ControlHelper.CornerRadius" Value="{DynamicResource AllControlCornerRadius}" />
+        <Setter Property="local:ControlHelper.MaskOpacity" Value="1" />
+        <Setter Property="local:ControlHelper.FocusedBrush" Value="{DynamicResource Primary}" />
+        <Setter Property="local:ControlHelper.FocusedForegroundBrush" Value="{DynamicResource WhiteForeground}" />
+        <Setter Property="local:ToggleButtonHelper.CheckedContent" Value="{x:Null}" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ToggleButton}">
+                    <Border
+                        x:Name="border"
+                        Background="{TemplateBinding Background}"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="{TemplateBinding BorderThickness}"
+                        CornerRadius="{Binding Path=(local:ControlHelper.CornerRadius), RelativeSource={RelativeSource Mode=TemplatedParent}}"
+                        SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}">
+                        <Grid>
+                            <local:ControlMask
+                                x:Name="mask"
+                                Background="{Binding Path=(local:ControlHelper.FocusedBrush), RelativeSource={RelativeSource Mode=TemplatedParent}}"
+                                CornerRadius="{Binding Path=(local:ControlHelper.CornerRadius), RelativeSource={RelativeSource Mode=TemplatedParent}}"
+                                IsActive="{TemplateBinding IsChecked}"
+                                MaskOpacity="{Binding Path=(local:ControlHelper.MaskOpacity), RelativeSource={RelativeSource Mode=TemplatedParent}}" />
+
+                            <ContentPresenter
+                                x:Name="contentPresenter"
+                                Margin="{TemplateBinding Padding}"
+                                HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                Focusable="False"
+                                RecognizesAccessKey="True"
+                                SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="Button.IsDefaulted" Value="true">
+                            <Setter TargetName="border" Property="BorderBrush" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}" />
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="false">
+                            <Setter Property="Opacity" Value="{DynamicResource UnenableOpcity}" />
+                        </Trigger>
+                        <Trigger Property="local:ButtonExtensions.Shape" Value="Circle">
+                            <Setter Property="Width" Value="{Binding Path=(local:ButtonExtensions.CircleDiameter), RelativeSource={RelativeSource Self}}" />
+                            <Setter Property="Height" Value="{Binding Path=(local:ButtonExtensions.CircleDiameter), RelativeSource={RelativeSource Self}}" />
+                            <Setter Property="local:ControlHelper.CornerRadius" Value="{Binding ActualHeight, RelativeSource={RelativeSource Self}, Converter={StaticResource HalfOfDoubleConverter}}" />
+                            <Setter Property="Padding" Value="0" />
+                        </Trigger>
+                        <Trigger Property="local:ButtonExtensions.Shape" Value="Round">
+                            <Setter Property="local:ControlHelper.CornerRadius" Value="{Binding ActualHeight, RelativeSource={RelativeSource Self}, Converter={StaticResource HalfOfDoubleConverter}}" />
+                        </Trigger>
+                        <Trigger Property="IsChecked" Value="True">
+                            <Setter Property="Foreground" Value="{Binding Path=(local:ControlHelper.FocusedForegroundBrush), RelativeSource={RelativeSource Self}}" />
+                        </Trigger>
+                        <Trigger Property="IsChecked" Value="False">
+                            <Setter Property="local:ControlHelper.FocusedBrush" Value="{DynamicResource Mask}" />
+                        </Trigger>
+                        <Trigger Property="IsChecked" Value="{x:Null}">
+                            <Setter Property="local:ControlHelper.FocusedBrush" Value="{DynamicResource Mask}" />
+                            <Setter Property="BorderBrush" Value="{DynamicResource Error}" />
+                            <Setter Property="BorderThickness" Value="1" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!--  亮色  -->
+    <Style
+        x:Key="LightToggleButton"
+        BasedOn="{StaticResource ExtToggleButton}"
+        TargetType="{x:Type ToggleButton}">
+        <Setter Property="local:ControlHelper.FocusedBrush" Value="{DynamicResource Light}" />
+        <Setter Property="local:ControlHelper.FocusedForegroundBrush" Value="{DynamicResource BlackForeground}" />
+    </Style>
+
+    <!--  暗色  -->
+    <Style
+        x:Key="DarkToggleButton"
+        BasedOn="{StaticResource ExtToggleButton}"
+        TargetType="{x:Type ToggleButton}">
+        <Setter Property="local:ControlHelper.FocusedBrush" Value="{DynamicResource Dark}" />
+        <Setter Property="local:ControlHelper.FocusedForegroundBrush" Value="{DynamicResource WhiteForeground}" />
+    </Style>
+
+    <!--  强调色  -->
+    <Style
+        x:Key="AccentToggleButton"
+        BasedOn="{StaticResource ExtToggleButton}"
+        TargetType="{x:Type ToggleButton}">
+        <Setter Property="local:ControlHelper.FocusedBrush" Value="{DynamicResource Accent}" />
+        <Setter Property="local:ControlHelper.FocusedForegroundBrush" Value="{DynamicResource WhiteForeground}" />
+    </Style>
+
+    <!--  默认圆形开关  -->
+    <Style
+        x:Key="CircleToggleButton"
+        BasedOn="{StaticResource ExtToggleButton}"
+        TargetType="{x:Type ToggleButton}">
+        <Setter Property="local:ButtonExtensions.Shape" Value="Circle" />
+    </Style>
+
+    <!--  圆形亮色开关  -->
+    <Style
+        x:Key="CircleLightToggleButton"
+        BasedOn="{StaticResource LightToggleButton}"
+        TargetType="{x:Type ToggleButton}">
+        <Setter Property="local:ButtonExtensions.Shape" Value="Circle" />
+    </Style>
+
+    <!--  圆形暗色开关  -->
+    <Style
+        x:Key="CircleDarkToggleButton"
+        BasedOn="{StaticResource DarkToggleButton}"
+        TargetType="{x:Type ToggleButton}">
+        <Setter Property="local:ButtonExtensions.Shape" Value="Circle" />
+    </Style>
+
+    <!--  圆形强调色开关  -->
+    <Style
+        x:Key="CircleAccentToggleButton"
+        BasedOn="{StaticResource AccentToggleButton}"
+        TargetType="{x:Type ToggleButton}">
+        <Setter Property="local:ButtonExtensions.Shape" Value="Circle" />
+    </Style>
+
+    <!--  切换开关默认  -->
+    <Style x:Key="SwitchToggleButton" TargetType="{x:Type ToggleButton}">
+        <Setter Property="Background" Value="{DynamicResource Border}" />
+        <Setter Property="BorderBrush" Value="Transparent" />
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}" />
+        <Setter Property="Foreground" Value="{DynamicResource DefaultForeground}" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="Cursor" Value="Hand" />
+        <Setter Property="SnapsToDevicePixels" Value="True" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="local:ControlHelper.FocusedBrush" Value="{DynamicResource Primary}" />
+        <Setter Property="local:ToggleButtonHelper.CheckedContent" Value="{x:Null}" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ToggleButton}">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+
+                        <Grid
+                            x:Name="backgroundRoot"
+                            Grid.Column="1"
+                            Width="26"
+                            Height="15"
+                            Margin="2,1">
+                            <Border
+                                x:Name="defaultBorder"
+                                Background="{TemplateBinding Background}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                CornerRadius="{Binding ActualHeight, Converter={StaticResource HalfOfDoubleConverter}, RelativeSource={RelativeSource Mode=Self}}"
+                                SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
+                            <Border
+                                x:Name="checkedBorder"
+                                Background="{Binding Path=(local:ControlHelper.FocusedBrush), RelativeSource={RelativeSource Mode=TemplatedParent}}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                CornerRadius="{Binding ActualHeight, Converter={StaticResource HalfOfDoubleConverter}, RelativeSource={RelativeSource Mode=Self}}"
+                                Opacity="0"
+                                SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
+                            <Canvas>
+                                <Ellipse
+                                    x:Name="littleBall"
+                                    Canvas.Right="12"
+                                    Width="15"
+                                    Height="{Binding ActualWidth, RelativeSource={RelativeSource Mode=Self}}"
+                                    Effect="{DynamicResource AllDirectionEffect}"
+                                    Fill="{DynamicResource WhiteForeground}" />
+                            </Canvas>
+                        </Grid>
+
+                        <Grid Grid.Column="0" Margin="0,0,5,0">
+                            <ContentPresenter
+                                x:Name="contentPresenter"
+                                Margin="{TemplateBinding Padding}"
+                                HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                Focusable="False"
+                                RecognizesAccessKey="True"
+                                SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
+                        </Grid>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger SourceName="backgroundRoot" Property="IsMouseOver" Value="True">
+                            <Trigger.EnterActions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation
+                                            Storyboard.TargetName="littleBall"
+                                            Storyboard.TargetProperty="Effect.BlurRadius"
+                                            To="10"
+                                            Duration="0:0:0.2" />
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </Trigger.EnterActions>
+                            <Trigger.ExitActions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation
+                                            Storyboard.TargetName="littleBall"
+                                            Storyboard.TargetProperty="Effect.BlurRadius"
+                                            Duration="0:0:0.2" />
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </Trigger.ExitActions>
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Trigger.EnterActions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation
+                                            Storyboard.TargetName="littleBall"
+                                            Storyboard.TargetProperty="Effect.BlurRadius"
+                                            To="2"
+                                            Duration="0:0:0.15">
+                                            <DoubleAnimation.EasingFunction>
+                                                <CubicEase EasingMode="EaseOut" />
+                                            </DoubleAnimation.EasingFunction>
+                                        </DoubleAnimation>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </Trigger.EnterActions>
+                            <Trigger.ExitActions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation
+                                            Storyboard.TargetName="littleBall"
+                                            Storyboard.TargetProperty="Effect.BlurRadius"
+                                            Duration="0:0:0.15">
+                                            <DoubleAnimation.EasingFunction>
+                                                <CubicEase EasingMode="EaseIn" />
+                                            </DoubleAnimation.EasingFunction>
+                                        </DoubleAnimation>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </Trigger.ExitActions>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="Opacity" Value="{DynamicResource UnenableOpcity}" />
+                        </Trigger>
+                        <Trigger Property="IsChecked" Value="True">
+                            <Trigger.EnterActions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation
+                                            Storyboard.TargetName="checkedBorder"
+                                            Storyboard.TargetProperty="Opacity"
+                                            To="1"
+                                            Duration="0:0:0.25" />
+                                        <DoubleAnimation
+                                            Storyboard.TargetName="littleBall"
+                                            Storyboard.TargetProperty="(Canvas.Right)"
+                                            To="-1"
+                                            Duration="0:0:0.25">
+                                            <DoubleAnimation.EasingFunction>
+                                                <CubicEase EasingMode="EaseOut" />
+                                            </DoubleAnimation.EasingFunction>
+                                        </DoubleAnimation>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </Trigger.EnterActions>
+                            <Trigger.ExitActions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation
+                                            Storyboard.TargetName="checkedBorder"
+                                            Storyboard.TargetProperty="Opacity"
+                                            Duration="0:0:0.25" />
+                                        <DoubleAnimation
+                                            Storyboard.TargetName="littleBall"
+                                            Storyboard.TargetProperty="(Canvas.Right)"
+                                            Duration="0:0:0.25">
+                                            <DoubleAnimation.EasingFunction>
+                                                <CubicEase EasingMode="EaseOut" />
+                                            </DoubleAnimation.EasingFunction>
+                                        </DoubleAnimation>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </Trigger.ExitActions>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!--  切换开关亮色  -->
+    <Style
+        x:Key="SwitchLightToggle"
+        BasedOn="{StaticResource SwitchToggleButton}"
+        TargetType="{x:Type ToggleButton}">
+        <Setter Property="local:ControlHelper.FocusedBrush" Value="{DynamicResource Light}" />
+    </Style>
+
+    <!--  切换开关暗色  -->
+    <Style
+        x:Key="SwitchDarkToggle"
+        BasedOn="{StaticResource SwitchToggleButton}"
+        TargetType="{x:Type ToggleButton}">
+        <Setter Property="local:ControlHelper.FocusedBrush" Value="{DynamicResource Dark}" />
+    </Style>
+
+    <!--  切换开关强调色  -->
+    <Style
+        x:Key="SwitchAccentToggle"
+        BasedOn="{StaticResource SwitchToggleButton}"
+        TargetType="{x:Type ToggleButton}">
+        <Setter Property="local:ControlHelper.FocusedBrush" Value="{DynamicResource Accent}" />
+    </Style>
+</ResourceDictionary>

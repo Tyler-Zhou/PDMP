@@ -1,0 +1,25 @@
+﻿using System;
+using System.Globalization;
+using System.Windows;
+using System.Windows.Data;
+
+namespace PDMP.Client.Core.Converters
+{
+    /// <summary>
+    /// double 值一半转换器
+    /// </summary>
+    public class HalfOfDoubleConverter : IValueConverter
+    {
+        /// <inheritdoc/>
+        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            return value is double d ? d / 2 : DependencyProperty.UnsetValue;
+        }
+
+        /// <inheritdoc/>
+        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            return DependencyProperty.UnsetValue;
+        }
+    }
+}

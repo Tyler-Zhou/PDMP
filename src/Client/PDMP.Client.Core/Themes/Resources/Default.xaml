@@ -1,0 +1,125 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:system="clr-namespace:System;assembly=mscorlib">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="pack://application:,,,/PDMP.Client.Core;component/Themes/Resources/Color.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/PDMP.Client.Core;component/Themes/Resources/Converter.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/PDMP.Client.Core;component/Themes/Resources/I18N/zh-CN.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+
+    <!--  Opacity  -->
+    <system:Double x:Key="UnenableOpcity">0.5</system:Double>
+
+    <!--  CircleDiameter  -->
+    <system:Double x:Key="InsideButtonCircleDiameter">22</system:Double>
+    <system:Double x:Key="TabButtonCircleDiameter">18</system:Double>
+
+    <!--  Effect  -->
+    <DropShadowEffect
+        x:Key="AllDirectionEffect"
+        BlurRadius="5"
+        Direction="0"
+        Opacity="0.7"
+        ShadowDepth="0"
+        Color="{StaticResource EffectColor}" />
+    <DropShadowEffect
+        x:Key="AllDirectionEffect2"
+        BlurRadius="7"
+        Direction="0"
+        Opacity="0.8"
+        ShadowDepth="0"
+        Color="{StaticResource EffectColor}" />
+    <DropShadowEffect
+        x:Key="AllDirectionEffect3"
+        BlurRadius="9"
+        Direction="0"
+        Opacity="0.85"
+        ShadowDepth="0"
+        Color="{StaticResource EffectColor}" />
+    <DropShadowEffect
+        x:Key="AllDirectionEffect4"
+        BlurRadius="11"
+        Direction="0"
+        Opacity="0.9"
+        ShadowDepth="0"
+        Color="{StaticResource EffectColor}" />
+    <DropShadowEffect
+        x:Key="AllDirectionEffect5"
+        BlurRadius="13"
+        Direction="0"
+        Opacity="0.95"
+        ShadowDepth="0"
+        Color="{StaticResource EffectColor}" />
+
+    <DropShadowEffect
+        x:Key="RightTopEffect"
+        BlurRadius="3"
+        Direction="45"
+        Opacity="0.7"
+        ShadowDepth="3"
+        Color="{StaticResource EffectColor}" />
+    <DropShadowEffect
+        x:Key="LeftTopEffect"
+        BlurRadius="3"
+        Direction="135"
+        Opacity="0.7"
+        ShadowDepth="3"
+        Color="{StaticResource EffectColor}" />
+    <DropShadowEffect
+        x:Key="RightBottomEffect"
+        BlurRadius="3"
+        Direction="-45"
+        Opacity="0.7"
+        ShadowDepth="3"
+        Color="{StaticResource EffectColor}" />
+    <DropShadowEffect
+        x:Key="LeftBottomEffect"
+        BlurRadius="3"
+        Direction="-135"
+        Opacity="0.7"
+        ShadowDepth="3"
+        Color="{StaticResource EffectColor}" />
+    <DropShadowEffect
+        x:Key="TopEffect"
+        BlurRadius="6"
+        Direction="90"
+        Opacity="0.7"
+        ShadowDepth="2"
+        Color="{StaticResource EffectColor}" />
+    <DropShadowEffect
+        x:Key="BottomEffect"
+        BlurRadius="6"
+        Direction="-90"
+        Opacity="0.7"
+        ShadowDepth="2"
+        Color="{StaticResource EffectColor}" />
+    <DropShadowEffect
+        x:Key="RightEffect"
+        BlurRadius="6"
+        Direction="0"
+        Opacity="0.7"
+        ShadowDepth="2"
+        Color="{StaticResource EffectColor}" />
+    <DropShadowEffect
+        x:Key="LeftEffect"
+        BlurRadius="6"
+        Direction="180"
+        Opacity="0.7"
+        ShadowDepth="2"
+        Color="{StaticResource EffectColor}" />
+
+    <!--  CornerRadius  -->
+    <CornerRadius x:Key="AllControlCornerRadius">3</CornerRadius>
+    <CornerRadius x:Key="LeftControlCornerRadius">3 0 0 3</CornerRadius>
+    <CornerRadius x:Key="RightControlCornerRadius">0 3 3 0</CornerRadius>
+    <CornerRadius x:Key="TopControlCornerRadius">3 3 0 0</CornerRadius>
+    <CornerRadius x:Key="BottomControlCornerRadius">0 0 3 3</CornerRadius>
+
+    <CornerRadius x:Key="AllContainerCornerRadius">5</CornerRadius>
+    <CornerRadius x:Key="LeftContainerCornerRadius">5 0 0 5</CornerRadius>
+    <CornerRadius x:Key="RightContainerCornerRadius">0 5 5 0</CornerRadius>
+    <CornerRadius x:Key="TopContainerCornerRadius">5 5 0 0</CornerRadius>
+    <CornerRadius x:Key="BottomContainerCornerRadius">0 0 5 5</CornerRadius>
+
+</ResourceDictionary>

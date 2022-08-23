@@ -1,0 +1,101 @@
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:PDMP.Client.Core">
+
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="pack://application:,,,/PDMP.Client.Core;component/Themes/Resources/Default.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/PDMP.Client.Core;component/Themes/Button.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/PDMP.Client.Core;component/Themes/Icon.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/PDMP.Client.Core;component/Themes/TextBox.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/PDMP.Client.Core;component/Themes/PasswordBox.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/PDMP.Client.Core;component/Themes/TextBlock.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/PDMP.Client.Core;component/Themes/RadioButton.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/PDMP.Client.Core;component/Themes/ToggleButton.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/PDMP.Client.Core;component/Themes/CheckBox.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/PDMP.Client.Core;component/Themes/ComboBox.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/PDMP.Client.Core;component/Themes/ProgressBar.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/PDMP.Client.Core;component/Themes/Slider.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/PDMP.Client.Core;component/Themes/ListBox.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/PDMP.Client.Core;component/Themes/GroupBox.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/PDMP.Client.Core;component/Themes/Label.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/PDMP.Client.Core;component/Themes/ListView.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/PDMP.Client.Core;component/Themes/TreeView.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/PDMP.Client.Core;component/Themes/Expander.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/PDMP.Client.Core;component/Themes/TabControl.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/PDMP.Client.Core;component/Themes/DatePicker.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/PDMP.Client.Core;component/Themes/Calendar.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/PDMP.Client.Core;component/Themes/DatePicker.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/PDMP.Client.Core;component/Themes/Clock.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/PDMP.Client.Core;component/Themes/TimePicker.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/PDMP.Client.Core;component/Themes/ScrollViewer.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/PDMP.Client.Core;component/Themes/ToolTip.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/PDMP.Client.Core;component/Themes/Menu.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/PDMP.Client.Core;component/Themes/ToolBar.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/PDMP.Client.Core;component/Themes/StatusBar.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/PDMP.Client.Core;component/Themes/DataGrid.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/PDMP.Client.Core;component/Themes/PageBar.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/PDMP.Client.Core;component/Themes/ContextMenu.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/PDMP.Client.Core;component/Themes/Card.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/PDMP.Client.Core;component/Themes/MessageContainer.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/PDMP.Client.Core;component/Themes/MessageCard.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/PDMP.Client.Core;component/Themes/Window.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/PDMP.Client.Core;component/Themes/MessageBoxContainer.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/PDMP.Client.Core;component/Themes/MessageBoxCard.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/PDMP.Client.Core;component/Themes/DialogContainer.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/PDMP.Client.Core;component/Themes/DateTimePicker.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/PDMP.Client.Core;component/Themes/Transition.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/PDMP.Client.Core;component/Themes/Badge.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/PDMP.Client.Core;component/Themes/Tag.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/PDMP.Client.Core;component/Themes/ControlMask.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/PDMP.Client.Core;component/Themes/Loading.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/PDMP.Client.Core;component/Themes/RepeatButton.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/PDMP.Client.Core;component/Themes/NumericBox.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/PDMP.Client.Core;component/Themes/StepBar.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+
+    <Style BasedOn="{StaticResource ExtButton}" TargetType="{x:Type Button}" />
+    <Style BasedOn="{StaticResource ExtCheckBox}" TargetType="{x:Type CheckBox}" />
+    <Style BasedOn="{StaticResource ExtComboBox}" TargetType="{x:Type ComboBox}" />
+    <Style BasedOn="{StaticResource ExtGroupBox}" TargetType="{x:Type GroupBox}" />
+    <Style BasedOn="{StaticResource ExtListBox}" TargetType="{x:Type ListBox}" />
+    <Style BasedOn="{StaticResource ExtPasswordBox}" TargetType="{x:Type PasswordBox}" />
+    <Style BasedOn="{StaticResource ExtProgressBar}" TargetType="{x:Type ProgressBar}" />
+    <Style BasedOn="{StaticResource ExtRadioButton}" TargetType="{x:Type RadioButton}" />
+    <Style BasedOn="{StaticResource ExtSlider}" TargetType="{x:Type Slider}" />
+    <Style BasedOn="{StaticResource ExtTextBox}" TargetType="{x:Type TextBox}" />
+    <Style BasedOn="{StaticResource ExtToggleButton}" TargetType="{x:Type ToggleButton}" />
+    <Style BasedOn="{StaticResource ExtLabel}" TargetType="{x:Type Label}" />
+    <Style BasedOn="{StaticResource ExtListView}" TargetType="{x:Type ListView}" />
+    <Style BasedOn="{StaticResource ExtTreeView}" TargetType="{x:Type TreeView}" />
+    <Style BasedOn="{StaticResource ExtExpander}" TargetType="{x:Type Expander}" />
+    <Style BasedOn="{StaticResource ExtTabControl}" TargetType="{x:Type TabControl}" />
+    <Style BasedOn="{StaticResource ExtCalendar}" TargetType="{x:Type Calendar}" />
+    <Style BasedOn="{StaticResource ExtDatePicker}" TargetType="{x:Type DatePicker}" />
+    <Style BasedOn="{StaticResource ExtClock}" TargetType="{x:Type local:Clock}" />
+    <Style BasedOn="{StaticResource ExtTimePicker}" TargetType="{x:Type local:TimePicker}" />
+    <Style BasedOn="{StaticResource ExtToolTip}" TargetType="{x:Type ToolTip}" />
+    <Style BasedOn="{StaticResource ExtScrollViewer}" TargetType="{x:Type ScrollViewer}" />
+    <Style BasedOn="{StaticResource ExtMenu}" TargetType="{x:Type Menu}" />
+    <Style BasedOn="{StaticResource ExtMenuItem}" TargetType="{x:Type MenuItem}" />
+    <Style BasedOn="{StaticResource ExtContextMenu}" TargetType="{x:Type ContextMenu}" />
+    <Style BasedOn="{StaticResource ExtToolBar}" TargetType="{x:Type ToolBar}" />
+    <Style BasedOn="{StaticResource ExtToolBarTray}" TargetType="{x:Type ToolBarTray}" />
+    <Style BasedOn="{StaticResource ExtStatusBar}" TargetType="{x:Type StatusBar}" />
+    <Style BasedOn="{StaticResource ExtDataGrid}" TargetType="{x:Type DataGrid}" />
+    <Style BasedOn="{StaticResource ExtPageBar}" TargetType="{x:Type local:PageBar}" />
+    <Style BasedOn="{StaticResource ExtCard}" TargetType="{x:Type local:Card}" />
+    <Style BasedOn="{StaticResource ExtMessageCard}" TargetType="{x:Type local:MessageCard}" />
+    <Style BasedOn="{StaticResource ExtMessageBoxCard}" TargetType="{x:Type local:MessageBoxCard}" />
+    <Style BasedOn="{StaticResource ExtDialogContainer}" TargetType="{x:Type local:DialogContainer}" />
+    <Style BasedOn="{StaticResource ExtDateTimePicker}" TargetType="{x:Type local:DateTimePicker}" />
+    <Style BasedOn="{StaticResource ExtTransition}" TargetType="{x:Type local:Transition}" />
+    <Style BasedOn="{StaticResource ExtBadge}" TargetType="{x:Type local:Badge}" />
+    <Style BasedOn="{StaticResource ExtTag}" TargetType="{x:Type local:Tag}" />
+    <Style BasedOn="{StaticResource ExtControlMask}" TargetType="{x:Type local:ControlMask}" />
+    <Style BasedOn="{StaticResource ExtLoading}" TargetType="{x:Type local:Loading}" />
+    <Style BasedOn="{StaticResource ExtRepeatButton}" TargetType="{x:Type RepeatButton}" />
+    <Style BasedOn="{StaticResource ExtNumericBox}" TargetType="{x:Type local:NumericBox}" />
+    <Style BasedOn="{StaticResource HorizontalStepBarItem}" TargetType="{x:Type local:StepBarItem}" />
+    <Style BasedOn="{StaticResource ExtStepBar}" TargetType="{x:Type local:StepBar}" />
+</ResourceDictionary>

@@ -1,0 +1,47 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:converter="clr-namespace:PDMP.Client.Core.Converters">
+
+    <converter:BooleanToVisibilityConverter x:Key="BooleanToVisibleConverter" />
+    <converter:BooleanToVisibilityConverter
+        x:Key="BooleanToCollapsedConverter"
+        FalseValue="Visible"
+        TrueValue="Collapsed" />
+    <converter:BooleanToVisibilityConverter
+        x:Key="BooleanToHiddenConverter"
+        FalseValue="Visible"
+        TrueValue="Hidden" />
+    <converter:BooleanToInverseConverter x:Key="BooleanToInverseConverter" />
+    <converter:BooleanToStringConverter x:Key="BooleanToStringConverter" />
+    <converter:BooleanToBrushConverter x:Key="BooleanToBrushConverter" />
+
+    <converter:EnumToBooleanConverter x:Key="EnumToBooleanConverter" />
+    <converter:EnumToBooleanInverseConverter x:Key="EnumToBooleanInverseConverter" />
+    <converter:EnumToVisibilityConverter x:Key="EnumToVisibleConverter" />
+    <converter:EnumToVisibilityConverter
+        x:Key="EnumToCollapsedConverter"
+        FalseVisibility="Visible"
+        TrueVisibility="Collapsed" />
+    <converter:EnumToVisibilityConverter
+        x:Key="EnumToHiddenConverter"
+        FalseVisibility="Visible"
+        TrueVisibility="Hidden" />
+
+    <converter:MathMultipleConverter x:Key="MathAddyConverter" />
+    <converter:MathMultipleConverter x:Key="MathSubtractConverter" Operation="Subtract" />
+    <converter:MathMultipleConverter x:Key="MathMultiplyConverter" Operation="Multiply" />
+    <converter:MathMultipleConverter x:Key="MathDivideConverter" Operation="Divide" />
+
+    <converter:HalfOfDoubleConverter x:Key="HalfOfDoubleConverter" />
+    <converter:IsNullOrEmptyConverter x:Key="IsNullOrEmptyConverter" />
+    <converter:NotNullConverter x:Key="NotNullConverter" />
+    <converter:GetPercentConverter x:Key="GetPercentConverter" />
+    <converter:DoublesToPointConverter x:Key="DoublesToPointConverter" />
+    <converter:DoublesToSizeConverter x:Key="DoublesToSizeConverter" />
+    <converter:GetArcPointConverter x:Key="GetArcPointConverter" />
+    <converter:IsLargeArcConverter x:Key="IsLargeArcConverter" />
+    <converter:IsEqualConverter x:Key="IsEqualConverter" />
+    <converter:VisibilityToBooleanConverter x:Key="VisibilityToBooleanConverter" />
+    <converter:DataGridRowIndexConverter x:Key="DataGridRowIndexConverter" />
+</ResourceDictionary>
