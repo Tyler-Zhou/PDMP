@@ -19,6 +19,7 @@
                     <ColumnDefinition Width="290" />
                 </Grid.ColumnDefinitions>
                 <DataGrid
+                    x:Name="RadioDataGrid"
                     Grid.Column="0"
                     Margin="5"
                     HorizontalContentAlignment="Center"

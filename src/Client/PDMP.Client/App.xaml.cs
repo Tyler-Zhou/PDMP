@@ -1,5 +1,8 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using DryIoc;
+using Microsoft.Extensions.Logging;
 using NLog.Extensions.Logging;
+using PDMP.Client.Core;
+using PDMP.Client.Core.Settings;
 using PDMP.Client.Helpers;
 using PDMP.Client.ViewModels;
 using PDMP.Client.Views;
@@ -88,9 +91,14 @@ namespace PDMP.Client
         /// <summary>
         /// 初始化
         /// </summary>
-        protected override void OnInitialized()
+        protected override async void OnInitialized()
         {
             base.OnInitialized();
+            var settingService = Container.Resolve<ISettingService>();
+            if(await settingService.GetAsync<ApplicationSetting>("Setting") == null)
+            {
+                await settingService.SaveAsync("Setting",new ApplicationSetting());
+            }
         }
         /// <summary>
         /// 加载模块
@@ -117,6 +125,8 @@ namespace PDMP.Client
             //serviceKey
 
             //Service
+            containerRegistry.Register<ISettingService, SettingService>();
+            containerRegistry.Register<ICacheService, CacheService>();
 
             //View & ViewModel
             containerRegistry.RegisterForNavigation<IndexView, IndexViewModel>();

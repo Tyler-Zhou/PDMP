@@ -69,7 +69,6 @@
     <Compile Include="Models\Topic\MultipleChoiceTopicModel.cs" />
     <Compile Include="Models\Topic\BaseTopicModel.cs" />
     <Compile Include="Models\Topic\RadioTopicModel.cs" />
-    <Compile Include="Models\Topic\TopicData.cs" />
     <Compile Include="Services\TopicService.cs" />
     <Compile Include="ViewModels\TopicViewModel.cs" />
     <Compile Include="Views\TopicView.xaml.cs">
