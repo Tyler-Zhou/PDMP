@@ -1,0 +1,543 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>PDMP</name>
+    </assembly>
+    <members>
+        <member name="T:PDMP.Client.ViewModels.IndexViewModel">
+            <summary>
+            首页视图模型
+            </summary>
+        </member>
+        <member name="M:PDMP.Client.ViewModels.IndexViewModel.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:PDMP.Client.ViewModels.MainViewModel">
+            <summary>
+            主窗体视图模型
+            </summary>
+        </member>
+        <member name="F:PDMP.Client.ViewModels.MainViewModel._ApplicationTitle">
+            <summary>
+            ApplicationTitle
+            </summary>
+        </member>
+        <member name="P:PDMP.Client.ViewModels.MainViewModel.ApplicationTitle">
+            <summary>
+            程序标题
+            </summary>
+        </member>
+        <member name="F:PDMP.Client.ViewModels.MainViewModel._UserName">
+            <summary>
+            UserName
+            </summary>
+        </member>
+        <member name="P:PDMP.Client.ViewModels.MainViewModel.UserName">
+            <summary>
+            用户名
+            </summary>
+        </member>
+        <member name="F:PDMP.Client.ViewModels.MainViewModel.menuItems">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PDMP.Client.ViewModels.MainViewModel.MenuItems">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:PDMP.Client.ViewModels.MainViewModel.currentMenuItem">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PDMP.Client.ViewModels.MainViewModel.CurrentMenuItem">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:PDMP.Client.ViewModels.MainViewModel.themeColors">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PDMP.Client.ViewModels.MainViewModel.ThemeColors">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:PDMP.Client.ViewModels.MainViewModel._ContainerProvider">
+            <summary>
+            容器提供服务
+            </summary>
+        </member>
+        <member name="F:PDMP.Client.ViewModels.MainViewModel._RegionManager">
+            <summary>
+            区域管理器
+            </summary>
+        </member>
+        <member name="P:PDMP.Client.ViewModels.MainViewModel.NavigateCommand">
+            <summary>
+            菜单导航命令
+            </summary>
+        </member>
+        <member name="P:PDMP.Client.ViewModels.MainViewModel.ChangeThemeColor">
+            <summary>
+            更改主题命令
+            </summary>
+        </member>
+        <member name="P:PDMP.Client.ViewModels.MainViewModel.OpenAboutDialog">
+            <summary>
+            打开窗口命令
+            </summary>
+        </member>
+        <member name="M:PDMP.Client.ViewModels.MainViewModel.#ctor(Prism.Ioc.IContainerProvider,Prism.Regions.IRegionManager,Prism.Events.IEventAggregator)">
+            <summary>
+            主窗体视图模型
+            </summary>
+            <param name="containerProvider"></param>
+            <param name="regionManager"></param>
+            <param name="eventAggregator"></param>
+        </member>
+        <member name="M:PDMP.Client.ViewModels.MainViewModel.Navigate(System.Object)">
+            <summary>
+            导航
+            </summary>
+            <param name="obj">菜单对象</param>
+        </member>
+        <member name="M:PDMP.Client.ViewModels.MainViewModel.ChangeThemeColorExecute(System.Object)">
+            <summary>
+            改编主题
+            </summary>
+            <param name="obj"></param>
+        </member>
+        <member name="M:PDMP.Client.ViewModels.MainViewModel.OpenAboutDialogExecute(System.Object)">
+            <summary>
+            打开关于窗口
+            </summary>
+            <param name="obj"></param>
+        </member>
+        <member name="T:PDMP.Client.App">
+            <summary>
+            App.xaml 的交互逻辑
+            </summary>
+            <summary>
+            App
+            </summary>
+        </member>
+        <member name="F:PDMP.Client.App.mutex">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:PDMP.Client.App._Logger">
+            <summary>
+            日志服务
+            </summary>
+        </member>
+        <member name="M:PDMP.Client.App.OnDispatcherUnhandledException(System.Object,System.Windows.Threading.DispatcherUnhandledExceptionEventArgs)">
+            <summary>
+            调度程序未处理的异常
+            </summary>
+        </member>
+        <member name="M:PDMP.Client.App.OnUnobservedTaskException(System.Object,System.Threading.Tasks.UnobservedTaskExceptionEventArgs)">
+            <summary>
+            未观察到的任务异常
+            </summary>
+        </member>
+        <member name="M:PDMP.Client.App.OnUnhandledException(System.Object,System.UnhandledExceptionEventArgs)">
+            <summary>
+            未处理的异常
+            </summary>
+        </member>
+        <member name="M:PDMP.Client.App.CreateShell">
+            <summary>
+            创建外壳
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:PDMP.Client.App.OnInitialized">
+            <summary>
+            初始化
+            </summary>
+        </member>
+        <member name="M:PDMP.Client.App.CreateModuleCatalog">
+            <summary>
+            加载模块
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:PDMP.Client.App.RegisterTypes(Prism.Ioc.IContainerRegistry)">
+            <summary>
+            注册 (视图、视图模型、服务)
+            </summary>
+            <param name="containerRegistry"></param>
+        </member>
+        <member name="M:PDMP.Client.App.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="M:PDMP.Client.App.Main">
+            <summary>
+            Application Entry Point.
+            </summary>
+        </member>
+        <member name="T:PDMP.Client.Common.PrismConstant">
+            <summary>
+            Prism 框架常量
+            </summary>
+        </member>
+        <member name="F:PDMP.Client.Common.PrismConstant.MAIN_VIEW_REGION_NAME">
+            <summary>
+            首页区域
+            </summary>
+        </member>
+        <member name="T:PDMP.Client.Converters.IsSelectedToIconConverter">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:PDMP.Client.Converters.IsSelectedToIconConverter.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            
+            </summary>
+            <param name="value"></param>
+            <param name="targetType"></param>
+            <param name="parameter"></param>
+            <param name="culture"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PDMP.Client.Converters.IsSelectedToIconConverter.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            
+            </summary>
+            <param name="value"></param>
+            <param name="targetType"></param>
+            <param name="parameter"></param>
+            <param name="culture"></param>
+            <returns></returns>
+        </member>
+        <member name="T:PDMP.Client.Helpers.DumpHelper">
+            <summary>
+            转储帮助类
+            </summary>
+        </member>
+        <member name="T:PDMP.Client.Helpers.DumpHelper.Option">
+            <summary>
+            
+            </summary>
+            <remarks>From dbghelp.h:</remarks>
+        </member>
+        <member name="F:PDMP.Client.Helpers.DumpHelper.Option.Normal">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:PDMP.Client.Helpers.DumpHelper.Option.WithDataSegs">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:PDMP.Client.Helpers.DumpHelper.Option.WithFullMemory">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:PDMP.Client.Helpers.DumpHelper.Option.WithHandleData">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:PDMP.Client.Helpers.DumpHelper.Option.FilterMemory">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:PDMP.Client.Helpers.DumpHelper.Option.ScanMemory">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:PDMP.Client.Helpers.DumpHelper.Option.WithUnloadedModules">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:PDMP.Client.Helpers.DumpHelper.Option.WithIndirectlyReferencedMemory">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:PDMP.Client.Helpers.DumpHelper.Option.FilterModulePaths">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:PDMP.Client.Helpers.DumpHelper.Option.WithProcessThreadData">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:PDMP.Client.Helpers.DumpHelper.Option.WithPrivateReadWriteMemory">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:PDMP.Client.Helpers.DumpHelper.Option.WithoutOptionalData">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:PDMP.Client.Helpers.DumpHelper.Option.WithFullMemoryInfo">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:PDMP.Client.Helpers.DumpHelper.Option.WithThreadInfo">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:PDMP.Client.Helpers.DumpHelper.Option.WithCodeSegs">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:PDMP.Client.Helpers.DumpHelper.Option.WithoutAuxiliaryState">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:PDMP.Client.Helpers.DumpHelper.Option.WithFullAuxiliaryState">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:PDMP.Client.Helpers.DumpHelper.Option.WithPrivateWriteCopyMemory">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:PDMP.Client.Helpers.DumpHelper.Option.IgnoreInaccessibleMemory">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:PDMP.Client.Helpers.DumpHelper.Option.ValidTypeFlags">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:PDMP.Client.Helpers.DumpHelper.ExceptionInfo">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:PDMP.Client.Helpers.DumpHelper.ExceptionInfo.None">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:PDMP.Client.Helpers.DumpHelper.ExceptionInfo.Present">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:PDMP.Client.Helpers.DumpHelper.MiniDumpExceptionInformation">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:PDMP.Client.Helpers.DumpHelper.MiniDumpWriteDump(System.IntPtr,System.UInt32,System.Runtime.InteropServices.SafeHandle,System.UInt32,PDMP.Client.Helpers.DumpHelper.MiniDumpExceptionInformation@,System.IntPtr,System.IntPtr)">
+            <summary>
+            Overload requiring MiniDumpExceptionInformation
+            </summary>
+            <param name="hProcess"></param>
+            <param name="processId"></param>
+            <param name="hFile"></param>
+            <param name="dumpType"></param>
+            <param name="expParam"></param>
+            <param name="userStreamParam"></param>
+            <param name="callbackParam"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PDMP.Client.Helpers.DumpHelper.MiniDumpWriteDump(System.IntPtr,System.UInt32,System.Runtime.InteropServices.SafeHandle,System.UInt32,System.IntPtr,System.IntPtr,System.IntPtr)">
+            <summary>
+            Overload supporting MiniDumpExceptionInformation == NULL
+            </summary>
+            <param name="hProcess"></param>
+            <param name="processId"></param>
+            <param name="hFile"></param>
+            <param name="dumpType"></param>
+            <param name="expParam"></param>
+            <param name="userStreamParam"></param>
+            <param name="callbackParam"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PDMP.Client.Helpers.DumpHelper.GetCurrentThreadId">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:PDMP.Client.Helpers.DumpHelper.Write(System.Runtime.InteropServices.SafeHandle,PDMP.Client.Helpers.DumpHelper.Option,PDMP.Client.Helpers.DumpHelper.ExceptionInfo)">
+            <summary>
+            
+            </summary>
+            <param name="fileHandle"></param>
+            <param name="options"></param>
+            <param name="exceptionInfo"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PDMP.Client.Helpers.DumpHelper.Write(System.Runtime.InteropServices.SafeHandle,PDMP.Client.Helpers.DumpHelper.Option)">
+            <summary>
+            
+            </summary>
+            <param name="fileHandle"></param>
+            <param name="dumpType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PDMP.Client.Helpers.DumpHelper.TryDump(System.String,PDMP.Client.Helpers.DumpHelper.Option)">
+            <summary>
+            
+            </summary>
+            <param name="dmpPath"></param>
+            <param name="dmpType"></param>
+            <returns></returns>
+        </member>
+        <member name="T:PDMP.Client.Views.AboutView">
+            <summary>
+            About.xaml 的交互逻辑
+            </summary>
+            <summary>
+            AboutView
+            </summary>
+        </member>
+        <member name="M:PDMP.Client.Views.AboutView.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:PDMP.Client.Views.IndexView">
+            <summary>
+            IndexView.xaml 的交互逻辑
+            </summary>
+            <summary>
+            IndexView
+            </summary>
+        </member>
+        <member name="M:PDMP.Client.Views.IndexView.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:PDMP.Client.Views.MainView">
+            <summary>
+            MainWindow.xaml 的交互逻辑
+            </summary>
+            <summary>
+            MainView
+            </summary>
+        </member>
+        <member name="M:PDMP.Client.Views.MainView.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:PDMP.Client.Models.MenuItemModel">
+            <summary>
+            菜单项
+            </summary>
+        </member>
+        <member name="P:PDMP.Client.Models.MenuItemModel.IconName">
+            <summary>
+            图标
+            </summary>
+        </member>
+        <member name="P:PDMP.Client.Models.MenuItemModel.DisplayName">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:PDMP.Client.Models.MenuItemModel.ViewName">
+            <summary>
+            内容
+            </summary>
+        </member>
+        <member name="P:PDMP.Client.Models.MenuItemModel.NavigationParams">
+            <summary>
+            导航参数
+            </summary>
+        </member>
+        <member name="P:PDMP.Client.Models.MenuItemModel.Children">
+            <summary>
+            子项
+            </summary>
+        </member>
+        <member name="M:PDMP.Client.Models.MenuItemModel.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:PDMP.Client.Models.ThemeColorModel">
+            <summary>
+            主题颜色
+            </summary>
+        </member>
+        <member name="P:PDMP.Client.Models.ThemeColorModel.Name">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PDMP.Client.Models.ThemeColorModel.Primary">
+            <summary>
+            基本
+            </summary>
+        </member>
+        <member name="P:PDMP.Client.Models.ThemeColorModel.Light">
+            <summary>
+            亮色
+            </summary>
+        </member>
+        <member name="P:PDMP.Client.Models.ThemeColorModel.Dark">
+            <summary>
+            暗色
+            </summary>
+        </member>
+        <member name="P:PDMP.Client.Models.ThemeColorModel.Accent">
+            <summary>
+            强调
+            </summary>
+        </member>
+        <member name="F:PDMP.Client.Models.ThemeColorModel._IsSeleted">
+            <summary>
+            是否选择
+            </summary>
+        </member>
+        <member name="P:PDMP.Client.Models.ThemeColorModel.IsSeleted">
+            <summary>
+            是否选择
+            </summary>
+        </member>
+        <member name="T:PDMP.Client.Properties.Resources">
+            <summary>
+              强类型资源类，用于查找本地化字符串等。
+            </summary>
+        </member>
+        <member name="P:PDMP.Client.Properties.Resources.ResourceManager">
+            <summary>
+              返回此类使用的缓存 ResourceManager 实例。
+            </summary>
+        </member>
+        <member name="P:PDMP.Client.Properties.Resources.Culture">
+            <summary>
+              重写当前线程的 CurrentUICulture 属性，对
+              使用此强类型资源类的所有资源查找执行重写。
+            </summary>
+        </member>
+    </members>
+</doc>
