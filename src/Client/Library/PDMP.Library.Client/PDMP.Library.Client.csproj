@@ -52,6 +52,8 @@
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -67,15 +69,28 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Common\Enums.cs" />
+    <Compile Include="Interfaces\IBookService.cs" />
+    <Compile Include="Interfaces\IChapterService.cs" />
     <Compile Include="Interfaces\ITopicService.cs" />
+    <Compile Include="Models\BookModel.cs" />
+    <Compile Include="Models\ChapterModel.cs" />
+    <Compile Include="Models\Parameters\BookParameter.cs" />
+    <Compile Include="Models\Parameters\ChapterParameter.cs" />
     <Compile Include="Models\Topic\JudgeTopicModel.cs" />
     <Compile Include="Models\Topic\ShortAnswerTopicModel.cs" />
     <Compile Include="Models\Topic\MultipleChoiceTopicModel.cs" />
     <Compile Include="Models\Topic\BaseTopicModel.cs" />
     <Compile Include="Models\Topic\RadioTopicModel.cs" />
+    <Compile Include="Services\BookService.cs" />
+    <Compile Include="Services\ChapterService.cs" />
     <Compile Include="Services\TopicService.cs" />
+    <Compile Include="ViewModels\BookViewModel.cs" />
+    <Compile Include="ViewModels\ChapterViewModel.cs" />
     <Compile Include="ViewModels\RadioTopicViewModel.cs" />
     <Compile Include="ViewModels\TopicViewModel.cs" />
+    <Compile Include="Views\ChapterView.xaml.cs">
+      <DependentUpon>ChapterView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\RadioTopicView.xaml.cs">
       <DependentUpon>RadioTopicView.xaml</DependentUpon>
     </Compile>
@@ -96,6 +111,10 @@
       <DependentUpon>BookView.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Views\ChapterView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\RadioTopicView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

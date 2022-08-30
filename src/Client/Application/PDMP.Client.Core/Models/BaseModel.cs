@@ -1,4 +1,5 @@
-﻿using System.ComponentModel;
+﻿using System;
+using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
 namespace PDMP.Client.Core.Models
@@ -11,7 +12,7 @@ namespace PDMP.Client.Core.Models
         /// <summary>
         /// 唯一键
         /// </summary>
-        public string Id { get; set; }
+        public Guid Id { get; set; }
         /// <summary>
         /// 属性更改事件
         /// </summary>

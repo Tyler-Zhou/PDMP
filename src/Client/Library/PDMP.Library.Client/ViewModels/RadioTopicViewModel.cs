@@ -98,7 +98,8 @@ namespace PDMP.Library.Client.ViewModels
                                 {
                                     new RadioTopicModel
                                             {
-                                                Id = "010101001",
+                                                Id = Guid.NewGuid(),
+                                                No = "010101001",
                                                 ErrorMessage = "",
                                                 Stem = "<p>（ ）被誉为“现代电子计算机之父”。</p>",
                                                 Answer = "D",

@@ -110,10 +110,19 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Common\ApplicationContent.cs" />
+    <Compile Include="Common\ApplicationContext.cs" />
+    <Compile Include="Common\Constants.cs" />
+    <Compile Include="Interfaces\IBaseService.cs" />
     <Compile Include="Interfaces\ICacheService.cs" />
+    <Compile Include="Interfaces\IPagedList.cs" />
     <Compile Include="Interfaces\ISettingService.cs" />
+    <Compile Include="Models\BaseRequest.cs" />
+    <Compile Include="Models\PagedList.cs" />
+    <Compile Include="Models\QueryParameter.cs" />
+    <Compile Include="Models\ReceiveResponse.cs" />
+    <Compile Include="Services\BaseService.cs" />
     <Compile Include="Services\CacheService.cs" />
+    <Compile Include="Services\ClientService.cs" />
     <Compile Include="Services\SettingService.cs" />
     <Compile Include="Common\FrameworkElementExtension.cs" />
     <Compile Include="Common\ValidateArgument.cs" />

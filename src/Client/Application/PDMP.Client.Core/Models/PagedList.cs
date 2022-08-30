@@ -1,6 +1,9 @@
-﻿using PDMP.Domain.Interfaces;
+﻿using PDMP.Client.Core.Interfaces;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 
-namespace PDMP.Domain.Entities
+namespace PDMP.Client.Core.Models
 {
     /// <summary>
     /// 表示 <see cref="IPagedList{T}"/> 接口的默认实现

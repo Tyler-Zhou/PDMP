@@ -1,4 +1,6 @@
-﻿namespace PDMP.Domain.Interfaces
+﻿using System.Collections.Generic;
+
+namespace PDMP.Client.Core.Interfaces
 {
     /// <summary>
     /// 为任何类型的分页列表提供接口

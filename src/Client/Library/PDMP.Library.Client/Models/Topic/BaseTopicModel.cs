@@ -9,6 +9,20 @@ namespace PDMP.Library.Client.Models
     /// </summary>
     public abstract class BaseTopicModel: BaseModel
     {
+        #region 题编号
+        private string _No = string.Empty;
+
+        /// <summary>
+        ///  题编号
+        /// </summary>
+        [JsonProperty("No")]
+        public string No
+        {
+            get { return _No; }
+            set { _No = value; OnPropertyChanged(); }
+        }
+        #endregion
+
         #region 题型
         private EnumTopicType _TopicType = EnumTopicType.UnKnown;
 
