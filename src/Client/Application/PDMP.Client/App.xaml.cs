@@ -75,7 +75,7 @@ namespace PDMP.Client
         protected override Window CreateShell()
         {
             bool createNew;
-            mutex = new Mutex(true, "pdOS", out createNew);
+            mutex = new Mutex(true, "PDMP", out createNew);
             if (!createNew)
                 Environment.Exit(0);
             //UI线程未捕获异常处理事件
