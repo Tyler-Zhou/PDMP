@@ -1,15 +1,17 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using PDMP.Contract.DTOs;
 using PDMP.Contract.Interfaces;
 
 namespace PDMP.Api.Controllers
 {
     /// <summary>
-    /// 验证控制器
+    /// 账号控制器
     /// </summary>
     [ApiController]
     [Route("PDMP/[controller]/[action]")]
-    public class WebAuthenticatorController : ControllerBase
+    [Authorize]
+    public class AccountController : ControllerBase
     {
         /// <summary>
         /// 用户服务
@@ -19,7 +21,7 @@ namespace PDMP.Api.Controllers
         /// 验证控制器
         /// </summary>
         /// <param name="userService">登录服务</param>
-        public WebAuthenticatorController(IUserService userService)
+        public AccountController(IUserService userService)
         {
             _UserService = userService;
         }
@@ -29,6 +31,7 @@ namespace PDMP.Api.Controllers
         /// <param name="param">参数</param>
         /// <returns></returns>
         [HttpPost]
+        [AllowAnonymous]
         public async Task<ServerResponse> Login([FromBody] UserDto param) =>
            await _UserService.LoginAsync(param.Account, param.Password);
         /// <summary>

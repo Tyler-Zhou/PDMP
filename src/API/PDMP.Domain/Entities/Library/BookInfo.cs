@@ -1,4 +1,5 @@
-﻿using MongoDB.Bson.Serialization.Attributes;
+﻿using MongoDB.Bson;
+using MongoDB.Bson.Serialization.Attributes;
 
 namespace PDMP.Domain.Entities
 {
@@ -43,6 +44,20 @@ namespace PDMP.Domain.Entities
         [BsonElement("sIntroduction")]
         [BsonDefaultValue("")]
         public string Introduction { get; set; }
+        /// <summary>
+        /// 封面链接
+        /// </summary>
+        [BsonElement("sPosterLink")]
+        [BsonDefaultValue("")]
+        public string PosterLink { get; set; }
+        /// <summary>
+        /// 封面(二进制)
+        /// </summary>
+        [BsonElement("bPosterContent")]
+        [BsonRepresentation(BsonType.Binary)]
+        [BsonDefaultValue("")]
+        public byte[] PosterContent { get; set; }
+
         /// <summary>
         /// 完本状态
         /// </summary>

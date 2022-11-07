@@ -1,5 +1,9 @@
 using AutoMapper;
+using IdentityModel;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using NLog.Web;
 using PDMP.Api.Mapper;
@@ -10,6 +14,7 @@ using PDMP.Domain.Entities;
 using PDMP.Domain.Interfaces;
 using PDMP.Infrastructure.DBContent;
 using PDMP.Infrastructure.Repositories;
+using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 //
@@ -32,6 +37,27 @@ builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IVersionRepository, VersionRepository>();
 builder.Services.AddScoped<IBookRepository, BookRepository>();
 builder.Services.AddScoped<IChapterRepository, ChapterRepository>();
+//JWT
+builder.Services.AddAuthentication(options =>
+{
+    options.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
+})
+.AddJwtBearer(options =>
+{
+    options.TokenValidationParameters = new TokenValidationParameters()
+    {
+        ValidateIssuer = true, //是否验证Issuer
+        ValidIssuer = builder.Configuration["Jwt:Issuer"], //发行人Issuer
+        ValidateAudience = true, //是否验证Audience
+        ValidAudience = builder.Configuration["Jwt:Audience"], //订阅人Audience
+        ValidateIssuerSigningKey = true, //是否验证SecurityKey
+        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Jwt:SecretKey"])), //SecurityKey
+        ValidateLifetime = true, //是否验证失效时间
+        ClockSkew = TimeSpan.FromSeconds(30), //过期时间容错值，解决服务器端时间不同步问题（秒）
+        RequireExpirationTime = true,
+    };
+});
+
 //添加实体映射
 //添加AutoMapper
 var automapperConfog = new MapperConfiguration(config =>

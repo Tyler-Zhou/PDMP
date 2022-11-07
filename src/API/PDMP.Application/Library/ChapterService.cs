@@ -43,6 +43,7 @@ namespace PDMP.Application
             {
                 var updateModel = _Mapper.Map<ChapterInfo>(dto);
                 updateModel.CreateDate = DateTime.Now;
+                _ChapterRepository.CollectionName = updateModel.BookKey;
                 if (await _ChapterRepository.InsertAsync(updateModel))
                     return new ServerResponse(true, updateModel);
                 return new ServerResponse("添加数据失败");
@@ -154,6 +155,7 @@ namespace PDMP.Application
             {
                 var dbToDo = _Mapper.Map<ChapterInfo>(model);
                 var filter = Builders<ChapterInfo>.Filter.Eq("Id", dbToDo.Id);
+                _ChapterRepository.CollectionName = model.BookKey;
                 var todo = await _ChapterRepository.GetFirstOrDefaultAsync(filter);
 
                 todo.Key = dbToDo.Key;
