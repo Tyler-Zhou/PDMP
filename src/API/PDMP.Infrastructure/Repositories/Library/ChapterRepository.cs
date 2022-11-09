@@ -1,24 +1,30 @@
-﻿using PDMP.Domain.Entities;
-using PDMP.Domain.Interfaces;
+/*******************************************************
+ * Project:
+ * Description:
+ * Version:1.0.0.0
+ * Time:2022-11-09 22:41:33
+ * Author:zhoubiyu@hotmail.com
+ * Update:
+********************************************************/
+using PDMP.Domain;
 
-namespace PDMP.Infrastructure.Repositories
+namespace PDMP.Infrastructure
 {
     /// <summary>
     /// 章节存储库
     /// </summary>
-    public class ChapterRepository : Repository<ChapterInfo>, IChapterRepository
+    public class ChapterRepository : Repository<ChapterEntity>, IRepository<ChapterEntity>
     {
-        /// <summary>
-        /// 集合名称
-        /// </summary>
-        public override string CollectionName { get; set; } = "Chapters";
-
+        #region 构造函数(Constructor)
         /// <summary>
         /// 章节存储库
         /// </summary>
-        /// <param name="context">MongoDB上下文</param>
-        public ChapterRepository(IMongoDBContext context) : base(context)
+        /// <param name="dbContext"></param>
+        public ChapterRepository(LibraryDBContext dbContext) : base(dbContext)
         {
         }
+        #endregion
+
     }
 }
+

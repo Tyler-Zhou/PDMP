@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Net.Http.Headers;
-using PDMP.Contract.DTOs;
-using PDMP.Contract.Interfaces;
+using PDMP.Api.Extensions;
+using PDMP.Contract;
 
 namespace PDMP.Api.Controllers
 {
@@ -12,6 +12,9 @@ namespace PDMP.Api.Controllers
     [Route("PDMP/[controller]/[action]")]
     public class DownloadController : ControllerBase
     {
+
+        readonly string _DownloadDir = "";
+
         /// <summary>
         /// 日志服务
         /// </summary>
@@ -19,7 +22,7 @@ namespace PDMP.Api.Controllers
 
         private const int BufferSize = 80 * 1024;
 
-        private const string MimeType = "application/octet-stream";
+        private const string _MimeType = "application/octet-stream";
         private IFileService _FileService { get; set; }
 
         /// <summary>
@@ -40,13 +43,16 @@ namespace PDMP.Api.Controllers
         /// 
         /// </summary>
         /// <param name="logger"></param>
+        /// <param name="configuration"></param>
         /// <param name="fileService"></param>
         /// <param name="contextAccessor"></param>
-        public DownloadController(ILogger<DownloadController> logger, IFileService fileService, IHttpContextAccessor contextAccessor)
+        public DownloadController(ILogger<DownloadController> logger, IConfiguration configuration, IFileService fileService, IHttpContextAccessor contextAccessor)
         {
             _Logger = logger;
             _FileService = fileService;
             _contextAccessor = contextAccessor;
+
+            _DownloadDir = configuration["FileStorage:DownloadDir"];
         }
 
 
@@ -58,24 +64,24 @@ namespace PDMP.Api.Controllers
         [HttpGet]
         public IActionResult GetFile(string fileName)
         {
-            if (!_FileService.Exists(fileName))
+            if (!_FileService.Exists(fileName, _DownloadDir))
             {
                 return new StatusCodeResult(StatusCodes.Status404NotFound);
             }
 
             //获取下载文件长度
-            var fileLength = _FileService.GetLength(fileName);
+            var fileLength = _FileService.GetLength(fileName, _DownloadDir);
 
             //初始化下载文件信息
             var fileInfo = GetFileInfoFromRequest(_context.Request, fileLength);
 
             //获取剩余部分文件流
-            var stream = new PartialContentFileStream(_FileService.Open(fileName),
+            var stream = new PartialContentFileStream(_FileService.Open(fileName, _DownloadDir),
                                                  fileInfo.From, fileInfo.To);
             //设置响应 请求头
             SetResponseHeaders(_context.Response, fileInfo, fileLength, fileName);
 
-            return new FileStreamResult(stream, new MediaTypeHeaderValue(MimeType));
+            return new FileStreamResult(stream, new MediaTypeHeaderValue(_MimeType));
         }
 
         /// <summary>
@@ -84,9 +90,9 @@ namespace PDMP.Api.Controllers
         /// <param name="request"></param>
         /// <param name="entityLength"></param>
         /// <returns></returns>
-        private FileDto GetFileInfoFromRequest(HttpRequest request, long entityLength)
+        private FileStreamInfo GetFileInfoFromRequest(HttpRequest request, long entityLength)
         {
-            var fileInfo = new FileDto
+            var fileInfo = new FileStreamInfo
             {
                 From = 0,
                 To = entityLength - 1,
@@ -143,7 +149,7 @@ namespace PDMP.Api.Controllers
         /// <param name="fileInfo"></param>
         /// <param name="fileLength"></param>
         /// <param name="fileName"></param>
-        private void SetResponseHeaders(HttpResponse response, FileDto fileInfo,long fileLength, string fileName)
+        private void SetResponseHeaders(HttpResponse response, FileStreamInfo fileInfo,long fileLength, string fileName)
         {
             response.Headers[HeaderNames.AcceptRanges] = "bytes";
             response.StatusCode = fileInfo.IsPartial ? StatusCodes.Status206PartialContent
@@ -152,7 +158,7 @@ namespace PDMP.Api.Controllers
             var contentDisposition = new ContentDispositionHeaderValue("attachment");
             contentDisposition.SetHttpFileName(fileName);
             response.Headers[HeaderNames.ContentDisposition] = contentDisposition.ToString();
-            response.Headers[HeaderNames.ContentType] = MimeType;
+            response.Headers[HeaderNames.ContentType] = _MimeType;
             response.Headers[HeaderNames.ContentLength] = fileInfo.Length.ToString();
             if (fileInfo.IsPartial)
             {

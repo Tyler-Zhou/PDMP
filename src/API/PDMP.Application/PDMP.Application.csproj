@@ -10,12 +10,12 @@
   <ItemGroup>
     <PackageReference Include="AutoMapper" Version="11.0.1" />
     <PackageReference Include="Microsoft.Extensions.Options" Version="6.0.0" />
-    <PackageReference Include="MongoDB.Driver" Version="2.15.0" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\PDMP.Contract\PDMP.Contract.csproj" />
     <ProjectReference Include="..\PDMP.Domain\PDMP.Domain.csproj" />
+    <ProjectReference Include="..\PDMP.Infrastructure\PDMP.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>

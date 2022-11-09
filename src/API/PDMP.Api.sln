@@ -3,15 +3,19 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32811.315
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PDMP.Domain", "PDMP.Domain\PDMP.Domain.csproj", "{15D9D624-E908-4928-B5E6-CAE8E2F977CA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PDMP.Domain", "PDMP.Domain\PDMP.Domain.csproj", "{15D9D624-E908-4928-B5E6-CAE8E2F977CA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PDMP.Application", "PDMP.Application\PDMP.Application.csproj", "{F32B3BB2-1DCF-4ADB-87C7-144441A0A7A7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PDMP.Application", "PDMP.Application\PDMP.Application.csproj", "{F32B3BB2-1DCF-4ADB-87C7-144441A0A7A7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PDMP.Infrastructure", "PDMP.Infrastructure\PDMP.Infrastructure.csproj", "{A8A36006-01D4-43E5-B93B-EEE30F83AE6C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PDMP.Infrastructure", "PDMP.Infrastructure\PDMP.Infrastructure.csproj", "{A8A36006-01D4-43E5-B93B-EEE30F83AE6C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PDMP.Contract", "PDMP.Contract\PDMP.Contract.csproj", "{051E241F-BCC6-47AB-A9C2-988DF2B6E7CD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PDMP.Contract", "PDMP.Contract\PDMP.Contract.csproj", "{051E241F-BCC6-47AB-A9C2-988DF2B6E7CD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PDMP.Api", "PDMP.Api\PDMP.Api.csproj", "{4B0D02FC-1041-4672-9BBA-CC7E4E369540}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PDMP.Api", "PDMP.Api\PDMP.Api.csproj", "{4B0D02FC-1041-4672-9BBA-CC7E4E369540}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PDMP.Infrastructure.UOW", "PDMP.Infrastructure.UOW\PDMP.Infrastructure.UOW.csproj", "{CA356AD5-EA99-441D-94F4-F2CEC4C8201A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PDMP.Shared", "PDMP.Shared\PDMP.Shared.csproj", "{66D99595-FA12-4EF8-A69B-D66D8C92FCFE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +43,14 @@ Global
 		{4B0D02FC-1041-4672-9BBA-CC7E4E369540}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4B0D02FC-1041-4672-9BBA-CC7E4E369540}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4B0D02FC-1041-4672-9BBA-CC7E4E369540}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CA356AD5-EA99-441D-94F4-F2CEC4C8201A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA356AD5-EA99-441D-94F4-F2CEC4C8201A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA356AD5-EA99-441D-94F4-F2CEC4C8201A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA356AD5-EA99-441D-94F4-F2CEC4C8201A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{66D99595-FA12-4EF8-A69B-D66D8C92FCFE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{66D99595-FA12-4EF8-A69B-D66D8C92FCFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{66D99595-FA12-4EF8-A69B-D66D8C92FCFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{66D99595-FA12-4EF8-A69B-D66D8C92FCFE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

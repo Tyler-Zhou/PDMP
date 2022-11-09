@@ -8,7 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Parameters\System\" />
+    <ProjectReference Include="..\PDMP.Shared\PDMP.Shared.csproj" />
   </ItemGroup>
 
 </Project>
